@@ -2,7 +2,31 @@
   "name": "cozy-window",
   "displayName": "Cozy Window",
   "description": "A cozy window in your sidebar with a sleepy cat or dog, changing seasons, holidays, treats and a gentle focus timer.",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "publisher": "melissa-themes",
+  "license": "MIT",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#2a2440",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/melissacskn/cozy-window"
+  },
+  "bugs": {
+    "url": "https://github.com/melissacskn/cozy-window/issues"
+  },
+  "keywords": [
+    "pet",
+    "cat",
+    "dog",
+    "cozy",
+    "focus",
+    "pomodoro",
+    "timer",
+    "sidebar"
+  ],
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -151,11 +175,6 @@
           "type": "boolean",
           "default": true,
           "description": "Decorate the window for Halloween, Christmas and Easter when the scene is Automatic."
-        },
-        "cozyWindow.preview.date": {
-          "type": "string",
-          "default": "",
-          "markdownDescription": "For testing: pretend it is this date and time, for example `2026-12-24T21:00`. Leave empty to use the real clock."
         }
       }
     }

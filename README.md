@@ -1,71 +1,56 @@
-# cozy-window README
+# Cozy Window
 
-This is the README for your extension "cozy-window". After writing up a brief description, we recommend including the following sections.
+A little window in your sidebar where a sleepy cat or dog keeps you company while you code. The view outside follows the seasons, the windowsill dresses up for the holidays, and a gentle focus timer is there whenever you want it.
+
+![Cozy Window in the VS Code sidebar](https://raw.githubusercontent.com/melissacskn/melissa-themes-assets/main/cozy-window-screenshot-1.png)
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Two companions.** Pick Mochi, a sleepy orange tabby, or Biscuit, a floppy-eared puppy. They nap on the windowsill, twitch an ear now and then, and wake up for a little stretch.
+- **Changing seasons.** The view outside follows the calendar: pink blossoms in spring, green trees in summer, orange leaves in autumn and snowy hills in winter.
+- **Holidays.** A pumpkin for Halloween, a tiny tree for Christmas and a basket of eggs for Easter appear on the windowsill at the right time of year.
+- **Day and night.** The sky follows your clock, from soft mornings and blue afternoons to sunsets and starry nights.
+- **Treats.** Give your companion a treat whenever you like and watch the hearts float up.
+- **An optional focus timer.** Turn it on from the clock button when you need it. Your companion naps while you focus, the tea slowly cools down, and a little meow or woof tells you it is time for a break. You can pause, resume or end a session at any time, and the time left is shown in the status bar.
 
-For example if there is an image subfolder under your extension project workspace:
+![Cozy Window screenshot 2](https://raw.githubusercontent.com/melissacskn/melissa-themes-assets/main/cozy-window-screenshot-2.png)
 
-\!\[feature X\]\(images/feature-x.png\)
+![Cozy Window screenshot 3](https://raw.githubusercontent.com/melissacskn/melissa-themes-assets/main/cozy-window-screenshot-3.png)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Getting started
 
-## Requirements
+1. Open the **Explorer** in the sidebar.
+2. Find the **Cozy Window** panel at the bottom and expand it.
+3. Hover over the panel title to see the buttons:
+   - **Clock:** show or hide the focus timer
+   - **Heart:** choose Mochi or Biscuit
+   - **Paint can:** pick a scene, or leave it on Automatic to follow the calendar
+   - **Gear:** open the settings
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Settings
 
-## Extension Settings
+| Setting | Default | Description |
+| --- | --- | --- |
+| `cozyWindow.companion` | `cat` | Who sits by your window: `cat` (Mochi) or `dog` (Biscuit). |
+| `cozyWindow.scene` | `auto` | `auto` follows the calendar. You can also pick `winter`, `halloween`, `christmas` or `easter`. |
+| `cozyWindow.focusMinutes` | `25` | Length of a focus session in minutes. |
+| `cozyWindow.breakMinutes` | `5` | Length of a break in minutes. |
+| `cozyWindow.sound` | `true` | Play a little meow or woof when a session ends or when you give a treat. |
+| `cozyWindow.hemisphere` | `north` | Set to `south` if you live in the Southern Hemisphere, so the seasons match. |
+| `cozyWindow.holidays` | `true` | Decorate the window for holidays when the scene is Automatic. |
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Privacy
 
-For example:
+Cozy Window works completely offline. It does not connect to the internet and does not collect any data.
 
-This extension contributes the following settings:
+## Credits
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Sound effects from [Freesound](https://freesound.org), released under Creative Commons 0.
 
-## Known Issues
+## Feedback
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Ideas for new scenes or companions, or found a bug? Please [open an issue](https://github.com/melissacskn/cozy-window/issues).
 
-## Release Notes
+## License
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+[MIT](LICENSE)
