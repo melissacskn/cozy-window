@@ -1,0 +1,185 @@
+{
+  "name": "cozy-window",
+  "displayName": "Cozy Window",
+  "description": "A cozy window in your sidebar with a sleepy cat or dog, changing seasons, holidays, treats and a gentle focus timer.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "type": "webview",
+          "id": "cozyWindow.view",
+          "name": "Cozy Window"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "cozyWindow.showTimer",
+        "title": "Show Focus Timer",
+        "category": "Cozy Window",
+        "icon": "$(watch)"
+      },
+      {
+        "command": "cozyWindow.hideTimer",
+        "title": "Hide Focus Timer",
+        "category": "Cozy Window",
+        "icon": "$(eye-closed)"
+      },
+      {
+        "command": "cozyWindow.focus",
+        "title": "Start, Pause or Resume Focus",
+        "category": "Cozy Window"
+      },
+      {
+        "command": "cozyWindow.changeCompanion",
+        "title": "Change Companion",
+        "category": "Cozy Window",
+        "icon": "$(heart)"
+      },
+      {
+        "command": "cozyWindow.changeScene",
+        "title": "Change Scene",
+        "category": "Cozy Window",
+        "icon": "$(paintcan)"
+      },
+      {
+        "command": "cozyWindow.openSettings",
+        "title": "Open Settings",
+        "category": "Cozy Window",
+        "icon": "$(gear)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "cozyWindow.showTimer",
+          "when": "view == cozyWindow.view && !cozyWindow.timerVisible",
+          "group": "navigation@0"
+        },
+        {
+          "command": "cozyWindow.hideTimer",
+          "when": "view == cozyWindow.view && cozyWindow.timerVisible",
+          "group": "navigation@0"
+        },
+        {
+          "command": "cozyWindow.changeCompanion",
+          "when": "view == cozyWindow.view",
+          "group": "navigation@1"
+        },
+        {
+          "command": "cozyWindow.changeScene",
+          "when": "view == cozyWindow.view",
+          "group": "navigation@2"
+        },
+        {
+          "command": "cozyWindow.openSettings",
+          "when": "view == cozyWindow.view",
+          "group": "navigation@3"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Cozy Window",
+      "properties": {
+        "cozyWindow.companion": {
+          "type": "string",
+          "enum": [
+            "cat",
+            "dog"
+          ],
+          "enumDescriptions": [
+            "Mochi, a sleepy orange tabby cat",
+            "Biscuit, a floppy-eared puppy"
+          ],
+          "default": "cat",
+          "description": "Who sits by your window."
+        },
+        "cozyWindow.scene": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "winter",
+            "halloween",
+            "christmas",
+            "easter"
+          ],
+          "default": "auto",
+          "description": "The scene outside your window. Automatic follows the calendar."
+        },
+        "cozyWindow.focusMinutes": {
+          "type": "number",
+          "default": 25,
+          "minimum": 1,
+          "maximum": 180,
+          "description": "Length of a focus session in minutes."
+        },
+        "cozyWindow.breakMinutes": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 60,
+          "description": "Length of a break in minutes."
+        },
+        "cozyWindow.sound": {
+          "type": "boolean",
+          "default": true,
+          "description": "Play a little meow or woof when a focus session ends or when you give a treat."
+        },
+        "cozyWindow.hemisphere": {
+          "type": "string",
+          "enum": [
+            "north",
+            "south"
+          ],
+          "enumDescriptions": [
+            "Northern Hemisphere",
+            "Southern Hemisphere"
+          ],
+          "default": "north",
+          "description": "Used to pick the right season for where you live."
+        },
+        "cozyWindow.holidays": {
+          "type": "boolean",
+          "default": true,
+          "description": "Decorate the window for Halloween, Christmas and Easter when the scene is Automatic."
+        },
+        "cozyWindow.preview.date": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "For testing: pretend it is this date and time, for example `2026-12-24T21:00`. Leave empty to use the real clock."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "typescript-eslint": "^8.61.1",
+    "eslint": "^10.5.0",
+    "typescript": "^6.0.3",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  }
+}

@@ -1,0 +1,109 @@
+body {
+	margin: 0;
+	padding: 10px 12px 14px;
+	font-family: var(--vscode-font-family);
+	color: var(--vscode-foreground);
+}
+
+#scene svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.wall { fill: #2a2440; }
+body.vscode-light .wall { fill: #f1e2d8; }
+
+.message {
+	margin-top: 10px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+/* Focus timer */
+#focus-ui {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+#focus-ui[hidden] { display: none; }
+.timer-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	color: var(--vscode-descriptionForeground);
+}
+#timer-time {
+	font-family: var(--vscode-editor-font-family);
+	font-size: 1.25em;
+	color: var(--vscode-foreground);
+}
+.timer-bar {
+	height: 6px;
+	border-radius: 3px;
+	overflow: hidden;
+	background: var(--vscode-input-background, rgba(128, 128, 128, .2));
+}
+#timer-fill {
+	height: 100%;
+	width: 0;
+	background: #f2c4b0;
+	transition: width 1s linear;
+}
+#timer-fill.break { background: #a8d8c8; }
+
+/* Buttons */
+.actions {
+	margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+.actions button[hidden] { display: none; }
+.actions button {
+	flex: 1 1 auto;
+	padding: 6px 12px;
+	border: 0;
+	border-radius: 4px;
+	font: inherit;
+	cursor: pointer;
+	color: var(--vscode-button-foreground);
+	background: var(--vscode-button-background);
+}
+.actions button:hover { background: var(--vscode-button-hoverBackground); }
+.actions button.secondary {
+	color: var(--vscode-button-secondaryForeground);
+	background: var(--vscode-button-secondaryBackground);
+}
+.actions button.secondary:hover { background: var(--vscode-button-secondaryHoverBackground); }
+.actions button:focus-visible { outline: 1px solid var(--vscode-focusBorder); outline-offset: 2px; }
+
+/* Gentle animations */
+.breathe { transform-box: fill-box; transform-origin: 50% 100%; animation: breathe 3.2s ease-in-out infinite; }
+@keyframes breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.035); } }
+
+.ear { transform-box: fill-box; transform-origin: 50% 100%; animation: twitch 4s ease-in-out infinite; }
+@keyframes twitch { 0%, 92%, 100% { transform: rotate(0); } 95% { transform: rotate(-12deg); } }
+
+.wag { transform-box: fill-box; transform-origin: 0% 100%; animation: wag .4s ease-in-out infinite; }
+@keyframes wag { 0%, 100% { transform: rotate(-10deg); } 50% { transform: rotate(14deg); } }
+
+.hop { animation: hop .9s ease-in-out infinite; }
+@keyframes hop { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+.zz { animation: zz 3s ease-out infinite; }
+@keyframes zz { 0% { transform: translate(0, 0); opacity: 0; } 30% { opacity: 1; } 100% { transform: translate(12px, -22px); opacity: 0; } }
+
+.steam { animation: steam 2.4s ease-out infinite; }
+@keyframes steam { 0% { transform: translateY(4px); opacity: 0; } 30% { opacity: .9; } 100% { transform: translateY(-10px); opacity: 0; } }
+
+.twinkle { animation: twinkle 2.6s ease-in-out infinite; }
+@keyframes twinkle { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
+
+.heart { transform-box: fill-box; transform-origin: center; animation: heart 2s ease-out infinite; opacity: 0; }
+@keyframes heart { 0% { transform: translateY(0) scale(.6); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-30px) scale(1.1); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+	* { animation: none !important; }
+}
