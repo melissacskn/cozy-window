@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "publisher": "melissa-themes",
   "license": "MIT",
+  "pricing": "Free",
   "icon": "icon.png",
   "galleryBanner": {
     "color": "#2a2440",
@@ -23,7 +24,6 @@
     "dog",
     "cozy",
     "focus",
-    "pomodoro",
     "timer",
     "sidebar"
   ],
